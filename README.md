@@ -19,3 +19,5 @@ node js를 사용하고 DB는 오라클을 사용할 예정
 DB와 크롤링(Noda js)을 성문이가 맡으며
 
 나는 API와 node js, Sever를 중점으로 제작하도록 한다.
+
+##  api 사용을 위해 가입 및 서버용 PC 선택
