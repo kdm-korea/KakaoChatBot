@@ -11,11 +11,26 @@ app.use(bodyParser.json());
 
 app.get('/keyboard', function(req, res){
     //send data
-    var data = {
-        'type' : 'buttons',
-        'buttons' : ['안녕']
-    };
-//    console.log('aaaa'+req);
+   
+        switch(msg){
+        case '안녕':
+//            clearTimeout(setTimeout(latereply,3000));
+            send = {
+                'message':{
+                    'text': '안녕하세요'
+                }
+            }
+            res.json(send);
+            break;
+         default:
+            send = {
+                'message':{
+                    'text' : '아직 준비가 안되었어요 :('
+                }
+            }
+            res.json(send);
+            break;
+        }
     //json syntex res
     res.json(data);
 });
