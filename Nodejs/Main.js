@@ -20,6 +20,21 @@ app.get('/keyboard', function(req, res){
     res.json(data);
 });
 
+app.post('/message', function(req, res){
+    //Client Write Msg
+    var msg = req.body.content;
+    //Res Message
+    var send = {};
+    
+    send = {
+                'message':{
+                    'text' : '아직 준비가 안되었어요 :('
+                }
+            }
+            res.json(send);
+});
+
+
 http.createServer(app).listen(9111, function(){
     console.log('실행중');
 });
