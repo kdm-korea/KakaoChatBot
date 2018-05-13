@@ -15,3 +15,16 @@ exports.weatherRes = function all(area, callback){
         }
     });
 }
+
+//rss 해석
+function analyzeRSS(xml, callback){
+    //xml Change Js Obj
+    parseString(xml, function(err, obj){
+        if(err) {console.log(err); return;}
+
+        //weather Infomation Print
+        var info = obj.rss.channel[0].item[0].description[0].header[0];
+        var infoTitle = obj.rss.channel[0].item[0];
+        callback('[ ' + infoTitle.title + ' ]\n' + info.wf);
+    });
+}
