@@ -3,6 +3,9 @@ var express = require('express');
 var http = require('http');
 var bodyParser = require('body-parser');
 
+//weather Module use
+var weatherRss = require('./Weather.js');
+
 var app = express();
 
 //body-parser Middleware use
@@ -21,6 +24,17 @@ app.get('/keyboard', function(req, res){
                 }
             }
             res.json(send);
+            break;
+         case '날씨':
+//            clearTimeout(setTimeout(latereply,3000));
+            weatherRss.weatherRes(200, function(values){ //Weather Crawling
+                send = {
+                   'message':{
+                        'text': values
+                    }
+               }
+                res.json(send);
+            });
             break;
          default:
             send = {
