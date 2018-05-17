@@ -1,6 +1,6 @@
 exports.questRes = function(text,callback){
     var openApiURL = 'http://aiopen.etri.re.kr:8000/WiseQAnal';
-    var access_key = 'accb1e07-ed73-4eb0-9f1f-7b39da8d0ab0';
+    var access_key = 'YOUR APi KEY';
 
     setTimeout(latereply, 1500);
     console.log("1");
