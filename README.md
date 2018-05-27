@@ -26,3 +26,6 @@ Nodejs를 통해 서버를 구축한다. 비동기라는 점을 주의한다.
 * 서버는 Raspberry Pi를 사용한다.
 * 데이터베이스는 Mysql을 사용한다.
 * 제작언어는 Nodejs를 사용한다.
+
+## 제작 구조
+![alt](/System_Structure.png)
