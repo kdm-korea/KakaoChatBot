@@ -5,6 +5,14 @@ var weatherRss = require('./Weather.js');
 //userres Module use
 //var userRes = require('./User.js');
 
+app.get('/keyboard',function(req,res){
+    var send={};
+    send.message={
+        text:'안녕하세요'
+    };
+            
+    res.json(send);
+});
 app.post('/message', function(req, res){
     //Client Write Msg
     var msg = req.body.content;
