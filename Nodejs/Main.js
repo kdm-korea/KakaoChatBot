@@ -1,3 +1,7 @@
+var express = require('express');
+var http = require('http');
+var app = express();
+
 //search Module use
 var searchRes = require('./Crawling.js');
 //weather Module use
@@ -13,6 +17,7 @@ app.get('/keyboard',function(req,res){
             
     res.json(send);
 });
+
 app.post('/message', function(req, res){
     //Client Write Msg
     var msg = req.body.content;
