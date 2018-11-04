@@ -10,9 +10,9 @@ exports.questRes = function(text,callback){
     }
     
     var requestJson = {
-        'access_key': access_key,
-        'argument': {
-            'text': text
+        access_key: access_key,
+        argument: {
+            text: text
         }
     };
     
