@@ -51,49 +51,40 @@ app.post('/message', function(req, res){
     switch(msg){
         case '안녕':
 //            clearTimeout(setTimeout(latereply,3000));
-            send = {
-                'message':{
-                    'text': '안녕하세요'
-                }
-            }
+           
+            send.message={
+                text:'안녕하세요'
+            };
             res.json(send);
             break;
         case '사과':
 //            clearTimeout(setTimeout(latereply,3000));
-            send = {
-                'message':{
-                    'text': '맛있다.'
-                }
-            }
+            send.message={
+                text:'맛있다'
+            };
             res.json(send);
             break;
         case '날씨':
 //            clearTimeout(setTimeout(latereply,3000));
             weatherRss.weatherRes(200, function(values){ //Weather Crawling
-                send = {
-                   'message':{
-                        'text': values
-                    }
-               }
+                send.message={
+                    text: values
+                };
                 res.json(send);
             });
             break;
         case '안알려줄래요': //DB Not Using
 //            clearTimeout(setTimeout(latereply,3000));
-            send = {
-                'message':{
-                    'text' : '다음에는 알려주세요! :)'
-                }
-            }
+            send.message={
+                text: '다음에는 알려주세요! :)'
+            };
             res.json(send);
             break;
         case '알려줄래요': //DB Using
 //            clearTimeout(setTimeout(latereply,3000));
-            send = {
-                'message':{
-                    'text' : '아직 준비가 안되었어요 :('
-                }
-            }
+            send.message={
+                text= '아직 준비가 안되었어요 :('
+            };
             res.json(send);
             break;
         default:
@@ -101,24 +92,22 @@ app.post('/message', function(req, res){
                 if(values == 'ERROR'){
 //                    clearTimeout(setTimeout(latereply,3000));
                     values = '가르쳐 주실래요?';
-                    send = {
-                        'message':{
-                            'text': values
-                        },
-                        keyboard:{
-                            'type':'buttons',
-                                'buttons':['알려줄래요','안알려줄래요']
-                        }
-                    }
+                    send.message={
+                        text:values
+                    };
+                    send.keyboard={
+                        type:buttons,
+                        buttons:['알려줄래요','안알려줄래요']
+                    };
+
                     res.json(send);    
                 }else{
 //                    clearTimeout(setTimeout(latereply,3000));
-                    send = {
-                    'message':{
-                        'text': values
-                        }
-                    }
-                    res.json(send);    
+                    send.message={
+                        text: values
+                    };
+
+                    res.json(send);
                 }
             });
             break;
