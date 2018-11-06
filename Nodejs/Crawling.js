@@ -1,6 +1,6 @@
 exports.questRes = function(text,callback){
-    var openApiURL = 'http://aiopen.etri.re.kr:8000/WiseQAnal';
-    var access_key = 'YOUR APi KEY';
+    const openApiURL = 'http://aiopen.etri.re.kr:8000/WiseQAnal';
+    const access_key = 'YOUR APi KEY';
 
     setTimeout(latereply, 1500);
     console.log("1");
@@ -10,9 +10,9 @@ exports.questRes = function(text,callback){
     }
     
     var requestJson = {
-        'access_key': access_key,
-        'argument': {
-            'text': text
+        access_key: access_key,
+        argument: {
+            text: text
         }
     };
     
