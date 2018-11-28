@@ -9,14 +9,26 @@ var weatherRss = require('./Weather.js');
 //userres Module use
 //var userRes = require('./User.js');
 
-app.get('/keyboard',function(req,res){
+app.get(()=>{'/keyboard', example
+    res.json(send); 
+});
+
+var example = function(req,res){
     var send={};
+    
     send.message={
         text:'안녕하세요'
     };
+};
+// app.get('/keyboard',function(req,res){
+//     var send={};
+    
+//     send.message={
+//         text:'안녕하세요'
+//     };
             
-    res.json(send);
-});
+//     res.json(send);
+// });
 
 app.post('/message', function(req, res){
     //Client Write Msg
@@ -28,26 +40,7 @@ app.post('/message', function(req, res){
 //    DB delete space
     var compare = msg.replace(/(\s*)/g,"");
     console.log(compare);
-//    userRes.userRes(compare, function(values){
-//       if(values != 'ERROR'){
-//           send = {
-//               'message':{
-//                    'text': values
-//                }
-//           }
-//           res.json(send);
-//       }
-//    });
-//     setTimeout(latereply, 3000);
-//    function latereply(){
-//        send = {
-//                'message':{
-//                    'text': '검색 시간이 너무 오래 걸려요 :('
-//                }
-//        }
-//        res.json(send);
-//    }
-    
+
     switch(msg){
         case '안녕':
 //            clearTimeout(setTimeout(latereply,3000));
